@@ -12,7 +12,8 @@
     />
     <link rel="stylesheet" href="assets/css/style.css" />
     <script src="assets/js/index.js"></script>
-
+    <script src="assets/js/taskManager.js"></script>
+    <style></style>
     <title>Task Manager</title>
   </head>
   <body>
@@ -21,7 +22,7 @@
         <div class="container-fluid">
           <span class="navbar-brand mb-0 h1">Task Manager</span>
           <img
-            src="assets\img\abstract-user-flat-4.svg"
+            src="assets\img\user-white.svg"
             style="width: 25px; height: 25px"
           />
         </div>
@@ -37,7 +38,41 @@
       </div>
       <section class="container">
         <h3 class="mb-3 h2">Mes tâches</h3>
-        <button type="button" class="btn btn-dark">Add Todo</button>
+        <button type="button" class="btn btn-dark shadow" data-bs-toggle="modal" data-bs-target="#add-todo">Add Todo</button>
+
+        <div class="modal fade" id="add-todo" tabindex="-1" aria-labelledby="todo-add-label" aria-hidden="true">
+          <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="add-todo">Ajouter une tâche</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="todo-name" class="col-form-label">Nom de la tâche</label>
+                    <input type="text" class="form-control" id="todo-name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="description-text" class="col-form-label">Description:</label>
+                    <textarea class="form-control" id="description-text"></textarea>
+                  </div>
+                  <label for="collaborateur">Collaborateur</label>
+                  <select id="collaborateur" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>Prettivy O.</option>
+                    <option value="1">Antoine R.</option>
+                    <option value="2">Clément E.</option>
+                    <option value="3">Patrick B.</option>
+                  </select>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Sauvegarder</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="container my-3">
           <div class="row">
             <div
@@ -194,7 +229,47 @@
         </div>
       </section>
       <section class="container-fluid my-5">
-        <div class="container border rounded shadow p-5">
+        <div class="card mx-5">
+          <div class="card-header">Faire ton premier site</div>
+          <div class="card-body">
+            <h5 class="card-title">Description</h5>
+            <p class="card-text">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Incidunt, veritatis deserunt? Quidem eius eligendi nihil, possimus
+              in, iusto recusandae accusantium dolorum, dicta aspernatur tempore
+              facilis atque nemo incidunt voluptates ullam.
+            </p>
+            <div class="d-flex justify-content-around">
+              <p>Réalisé à 50%</p>
+              <p>Date de fin : xx/xx/xx</p>
+            </div>
+            <div class="row">
+            <h3>Commentaire</h3>
+            <form>
+              <div class="form-group col-5">
+                <label for="exampleFormControlInput1">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  placeholder="name@example.com"
+                />
+              </div>
+              <div class="form-group col-5">
+                <label for="exampleFormControlTextarea1"
+                  >Example textarea</label
+                >
+                <textarea
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-dark mt-3">Soumettre</button>
+          </div>
+        </div>
+
+        <!-- <div class="container border rounded shadow p-5">
           <div
             class="row d-flex justify-content-between align-items-center border px-3 py-1"
           >
@@ -222,6 +297,7 @@
               <p>Réalisé à 50%</p>
               <p>Date de fin : xx/xx/xx</p>
             </div>
+            
           </div>
           <div class="row px-5 border">
             <h3>Commentaire</h3>
@@ -247,7 +323,7 @@
               </div>
               <button type="submit" class="btn btn-dark">Soumettre</button>
             </form>
-          </div>
+          </div> -->
         </div>
       </section>
       <footer class="text-muted py-5 bg-dark">
