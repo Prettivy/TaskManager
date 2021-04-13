@@ -13,7 +13,17 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <script src="assets/js/index.js"></script>
     <script src="assets/js/taskManager.js"></script>
-    <style></style>
+    <style>
+      button{
+        border: none;
+        background-color: transparent;
+        font-weight: bolder;
+        
+      }
+      button:hover{
+        color: red;
+      }
+    </style>
     <title>Task Manager</title>
   </head>
   <body>
@@ -93,7 +103,13 @@
                       style="width: 25px; height: 25px"
                     />
                   </div>
-                  <span class="badge bg-danger rounded-pill"> </span>
+                  <div class="ms-2 d-flex flex-column justify-content-around">
+                    <span class="badge bg-danger rounded-pill mb-4"> </span>
+                    <div class="button">
+                      <button>x</button><button>></button>
+                    </div>
+                  </div>
+                  
                 </li>
                 <li
                   class="list-group-item d-flex justify-content-between align-items-start border mt-1"
@@ -116,7 +132,12 @@
                       style="width: 25px; height: 25px"
                     />
                   </div>
-                  <span class="badge bg-danger rounded-pill"> </span>
+                  <div class="ms-2 d-flex flex-column justify-content-around">
+                    <span class="badge bg-danger rounded-pill mb-4"> </span>
+                    <div class="button">
+                      <button>x</button><button>></button>
+                    </div>
+                  </div>
                 </li>
                 <li
                   class="list-group-item d-flex justify-content-between align-items-start border mt-1"
@@ -139,7 +160,12 @@
                       style="width: 25px; height: 25px"
                     />
                   </div>
-                  <span class="badge bg-danger rounded-pill"> </span>
+                  <div class="ms-2 d-flex flex-column justify-content-around">
+                    <span class="badge bg-danger rounded-pill mb-4"> </span>
+                    <div class="button">
+                      <button>x</button><button>></button>
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -170,7 +196,12 @@
                       style="width: 25px; height: 25px"
                     />
                   </div>
-                  <span class="badge bg-warning rounded-pill"> </span>
+                  <div class="ms-2 d-flex flex-column justify-content-around">
+                    <span class="badge bg-warning rounded-pill mb-4"> </span>
+                    <div class="button">
+                      <button><</button><button>></button>
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -201,7 +232,12 @@
                       style="width: 25px; height: 25px"
                     />
                   </div>
-                  <span class="badge bg-primary rounded-pill"> </span>
+                  <div class="ms-2 d-flex flex-column justify-content-around">
+                    <span class="badge bg-primary rounded-pill mb-4"> </span>
+                    <div class="button">
+                      <button><</button><button>></button>
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -232,7 +268,12 @@
                       style="width: 25px; height: 25px"
                     />
                   </div>
-                  <span class="badge bg-success rounded-pill"> </span>
+                  <div class="ms-2 d-flex flex-column justify-content-around">
+                    <span class="badge bg-success rounded-pill mb-4"> </span>
+                    <div class="button">
+                      <button><</button><button>x</button>
+                    </div>
+                  </div>
                 </li>
                 <li
                   class="list-group-item d-flex justify-content-between align-items-start border mt-1"
@@ -251,7 +292,12 @@
                     />
                   </div>
                   <div>
-                    <span class="badge bg-success rounded-pill"> </span>
+                    <div class="ms-2 d-flex flex-column justify-content-around">
+                    <span class="badge bg-success rounded-pill mb-4"> </span>
+                    <div class="button">
+                      <button><</button><button>x</button>
+                    </div>
+                  </div>
                   </div>
                 </li>
               </ul>
