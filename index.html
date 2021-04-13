@@ -14,13 +14,12 @@
     <script src="assets/js/index.js"></script>
     <script src="assets/js/taskManager.js"></script>
     <style>
-      button{
+      button {
         border: none;
         background-color: transparent;
         font-weight: bolder;
-        
       }
-      button:hover{
+      button:hover {
         color: red;
       }
     </style>
@@ -48,37 +47,78 @@
       </div>
       <section class="container">
         <h3 class="mb-3 h2">Mes tâches</h3>
-        <button type="button" class="btn btn-dark shadow" data-bs-toggle="modal" data-bs-target="#add-todo">Add Todo</button>
+        <button
+          type="button"
+          class="btn btn-dark shadow"
+          data-bs-toggle="modal"
+          data-bs-target="#add-todo"
+        >
+          Add Todo
+        </button>
 
-        <div class="modal fade" id="add-todo" tabindex="-1" aria-labelledby="todo-add-label" aria-hidden="true">
-          <div class="modal-dialog  modal-dialog-centered">
+        <div
+          class="modal fade"
+          id="add-todo"
+          tabindex="-1"
+          aria-labelledby="todo-add-label"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="add-todo">Ajouter une tâche</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
               </div>
               <div class="modal-body">
                 <form>
                   <div class="mb-3">
-                    <label for="todo-name" class="col-form-label">Nom de la tâche</label>
-                    <input type="text" class="form-control" id="todo-name">
+                    <label for="todo-name" class="col-form-label"
+                      >Nom de la tâche :</label
+                    >
+                    <input type="text" class="form-control" id="todo-name" />
                   </div>
                   <div class="mb-3">
-                    <label for="description-text" class="col-form-label">Description:</label>
-                    <textarea class="form-control" id="description-text"></textarea>
+                    <label for="description-text" class="col-form-label"
+                      >Description :</label
+                    >
+                    <textarea
+                      class="form-control"
+                      id="description-text"
+                    ></textarea>
                   </div>
-                  <label for="collaborateur">Collaborateur</label>
-                  <select id="collaborateur" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                  <label for="collaborateur">Collaborateur :</label>
+                  <select
+                    id="collaborateur"
+                    class="form-select form-select-sm mb-3"
+                    aria-label=".form-select-sm example"
+                  >
                     <option selected>Prettivy O.</option>
                     <option value="1">Antoine R.</option>
                     <option value="2">Clément E.</option>
                     <option value="3">Patrick B.</option>
                   </select>
+                  <div class="mb-3 d-flex flex-column">
+                    <label for="date">Date de fin :</label>
+                    <input type="date" id="date" class="border rounded p-1" />
+                  </div>
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Sauvegarder</button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                  Sauvegarder
+                </button>
               </div>
             </div>
           </div>
@@ -110,7 +150,6 @@
                       <button>x</button><button>></button>
                     </div>
                   </div>
-                  
                 </li>
                 <li
                   class="list-group-item d-flex justify-content-between align-items-start border mt-1"
@@ -294,11 +333,11 @@
                   </div>
                   <div>
                     <div class="ms-2 d-flex flex-column justify-content-around">
-                    <span class="badge bg-success rounded-pill mb-4"> </span>
-                    <div class="button">
-                      <button><</button><button>x</button>
+                      <span class="badge bg-success rounded-pill mb-4"> </span>
+                      <div class="button">
+                        <button><</button><button>x</button>
+                      </div>
                     </div>
-                  </div>
                   </div>
                 </li>
               </ul>
@@ -323,86 +362,34 @@
               <p>Date de fin : xx/xx/xx</p>
             </div>
             <div class="row">
-            <h3>Commentaire</h3>
-            <form>
-              <div class="form-group col-5">
-                <label for="exampleFormControlInput1">Email address</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="name@example.com"
-                />
-              </div>
-              <div class="form-group col-5">
-                <label for="exampleFormControlTextarea1"
-                  >Example textarea</label
-                >
-                <textarea
-                  class="form-control"
-                  id="exampleFormControlTextarea1"
-                  rows="3"
-                ></textarea>
-              </div>
-              <button type="submit" class="btn btn-dark mt-3">Soumettre</button>
-          </div>
-        </div>
-
-        <!-- <div class="container border rounded shadow p-5">
-          <div
-            class="row d-flex justify-content-between align-items-center border px-3 py-1"
-          >
-            <div class="col col-sm"><h2>Faire ton premier site</h2></div>
-            <div class="col d-flex justify-content-end">
-              <img
-                class="mx-1"
-                src="assets\img\abstract-user-flat-4.svg"
-                style="width: 25px; height: 25px"
-              />
-            </div>
-            <div class="col d-flex justify-content-end">
-              <div class="status"></div>
+              <h3>Commentaire</h3>
+              <form>
+                <div class="form-group col-5 mb-3">
+                  <label for="towho">Destinataire</label>
+                  <select
+                    class="form-select"
+                    id="towho"
+                    aria-label="Default select example"
+                  >
+                    <option value="1">Antoine R.</option>
+                    <option value="2">Clément E.</option>
+                    <option value="3">Patrick B.</option>
+                  </select>
+                </div>
+                <div class="form-group col-5">
+                  <label for="commentaire">Commentaire</label>
+                  <textarea
+                    class="form-control"
+                    id="commentaire"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark mt-3">
+                  Soumettre
+                </button>
+              </form>
             </div>
           </div>
-          <div class="row px-5 py-3 border">
-            <h3 class="py-1">Description</h3>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Incidunt, veritatis deserunt? Quidem eius eligendi nihil, possimus
-              in, iusto recusandae accusantium dolorum, dicta aspernatur tempore
-              facilis atque nemo incidunt voluptates ullam.
-            </p>
-            <div class="d-flex justify-content-around">
-              <p>Réalisé à 50%</p>
-              <p>Date de fin : xx/xx/xx</p>
-            </div>
-            
-          </div>
-          <div class="row px-5 border">
-            <h3>Commentaire</h3>
-            <form>
-              <div class="form-group col-5">
-                <label for="exampleFormControlInput1">Email address</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="name@example.com"
-                />
-              </div>
-              <div class="form-group col-5">
-                <label for="exampleFormControlTextarea1"
-                  >Example textarea</label
-                >
-                <textarea
-                  class="form-control"
-                  id="exampleFormControlTextarea1"
-                  rows="3"
-                ></textarea>
-              </div>
-              <button type="submit" class="btn btn-dark">Soumettre</button>
-            </form>
-          </div> -->
         </div>
       </section>
       <footer class="text-muted py-5 bg-dark">
