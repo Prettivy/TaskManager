@@ -11,8 +11,8 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <script src="assets/js/index.js"></script>
-    <script src="assets/js/taskManager.js"></script>
+    <script src="assets/js/taskManager.js" defer></script>
+    <script src="assets/js/index.js" defer></script>
     <style>
       button {
         border: none;
@@ -75,18 +75,24 @@
                 ></button>
               </div>
               <div class="modal-body">
-                <form>
+                <form id="add-todo-form">
                   <div class="mb-3">
                     <label for="todo-name" class="col-form-label"
                       >Nom de la tâche :</label
                     >
-                    <input type="text" class="form-control" id="todo-name" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="todo-name"
+                      required
+                    />
                   </div>
                   <div class="mb-3">
                     <label for="description-text" class="col-form-label"
                       >Description :</label
                     >
                     <textarea
+                      required
                       class="form-control"
                       id="description-text"
                     ></textarea>
@@ -96,29 +102,37 @@
                     id="collaborateur"
                     class="form-select form-select-sm mb-3"
                     aria-label=".form-select-sm example"
+                    required
                   >
-                    <option selected>Prettivy O.</option>
-                    <option value="1">Antoine R.</option>
-                    <option value="2">Clément E.</option>
-                    <option value="3">Patrick B.</option>
+                    <option value="Prettivy" data-id="1" selected>
+                      Prettivy O.
+                    </option>
+                    <option value="Antoine" data-id="2">Antoine R.</option>
+                    <option value="Clément" data-id="3">Clément E.</option>
+                    <option value="Xinyu" data-id="4">Xinyu Y.</option>
                   </select>
                   <div class="mb-3 d-flex flex-column">
                     <label for="date">Date de fin :</label>
-                    <input type="date" id="date" class="border rounded p-1" />
+                    <input
+                      type="date"
+                      id="date"
+                      class="border rounded p-1"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                      Sauvegarder
+                    </button>
                   </div>
                 </form>
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button type="button" class="btn btn-primary">
-                  Sauvegarder
-                </button>
               </div>
             </div>
           </div>
@@ -131,83 +145,7 @@
             >
               <h3>Nouveau</h3>
               <!-- List group -->
-              <ul class="list-group">
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-start rounded-2 border border-primary active"
-                  aria-current="true"
-                >
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold mb-3">Faire ton premier site</div>
-                    <img
-                      class="mx-1"
-                      src="assets\img\abstract-user-flat-4.svg"
-                      style="width: 25px; height: 25px"
-                    />
-                  </div>
-                  <div class="ms-2 d-flex flex-column justify-content-around">
-                    <span class="badge bg-danger rounded-pill mb-4"> </span>
-                    <div class="button">
-                      <button>x</button><button>></button>
-                    </div>
-                  </div>
-                </li>
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-start border mt-1"
-                >
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold mb-3">Apprendre Javascript</div>
-                    <img
-                      class="mx-1"
-                      src="assets\img\abstract-user-flat-4.svg"
-                      style="width: 25px; height: 25px"
-                    />
-                    <img
-                      class="mx-1"
-                      src="assets\img\abstract-user-flat-4.svg"
-                      style="width: 25px; height: 25px"
-                    />
-                    <img
-                      class="mx-1"
-                      src="assets\img\abstract-user-flat-4.svg"
-                      style="width: 25px; height: 25px"
-                    />
-                  </div>
-                  <div class="ms-2 d-flex flex-column justify-content-around">
-                    <span class="badge bg-danger rounded-pill mb-4"> </span>
-                    <div class="button">
-                      <button>x</button><button>></button>
-                    </div>
-                  </div>
-                </li>
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-start border mt-1"
-                >
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold mb-3">Apprendre React.js</div>
-                    <img
-                      class="mx-1"
-                      src="assets\img\abstract-user-flat-4.svg"
-                      style="width: 25px; height: 25px"
-                    />
-                    <img
-                      class="mx-1"
-                      src="assets\img\abstract-user-flat-4.svg"
-                      style="width: 25px; height: 25px"
-                    />
-                    <img
-                      class="mx-1"
-                      src="assets\img\abstract-user-flat-4.svg"
-                      style="width: 25px; height: 25px"
-                    />
-                  </div>
-                  <div class="ms-2 d-flex flex-column justify-content-around">
-                    <span class="badge bg-danger rounded-pill mb-4"> </span>
-                    <div class="button">
-                      <button>x</button><button>></button>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+              <ul class="list-group" id="todo-todo"></ul>
             </div>
             <div
               class="border col-sm shadow mx-1 p-3"
@@ -348,10 +286,10 @@
       <section class="container-fluid my-5">
         <!-- Bootstrap card -->
         <div class="card mx-5 shadow">
-          <div class="card-header">Faire ton premier site</div>
+          <div class="card-header" id="todo-title">Faire ton premier site</div>
           <div class="card-body">
             <h5 class="card-title">Description</h5>
-            <p class="card-text">
+            <p class="card-text" id="todo-description">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Incidunt, veritatis deserunt? Quidem eius eligendi nihil, possimus
               in, iusto recusandae accusantium dolorum, dicta aspernatur tempore
@@ -359,7 +297,7 @@
             </p>
             <div class="d-flex justify-content-around">
               <p>Réalisé à 50%</p>
-              <p>Date de fin : xx/xx/xx</p>
+              <p id="todo-date">Date de fin : xx/xx/xx</p>
             </div>
             <div class="row">
               <h3>Commentaire</h3>
