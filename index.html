@@ -11,6 +11,10 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+    />
     <script src="assets/js/taskManager.js" defer></script>
     <script src="assets/js/index.js" defer></script>
     <style>
@@ -104,13 +108,15 @@
                     aria-label=".form-select-sm example"
                     required
                   >
-                    <option value="Prettivy" data-id="1" selected>
-                      Prettivy O.
-                    </option>
+                    <option selected disabled value="">Qui...</option>
+                    <option value="Prettivy" data-id="1">Prettivy O.</option>
                     <option value="Antoine" data-id="2">Antoine R.</option>
                     <option value="Clément" data-id="3">Clément E.</option>
                     <option value="Xinyu" data-id="4">Xinyu Y.</option>
                   </select>
+                  <div class="invalid-feedback">
+                    Please select a valid state.
+                  </div>
                   <div class="mb-3 d-flex flex-column">
                     <label for="date">Date de fin :</label>
                     <input
@@ -120,6 +126,18 @@
                       required
                     />
                   </div>
+                  <label for="status">Statut :</label>
+                  <select
+                    id="status"
+                    class="form-select form-select-sm mb-3"
+                    aria-label=".form-select-sm example"
+                    required
+                  >
+                    <option selected value="todo">Nouveau</option>
+                    <option value="inprogress">En cours</option>
+                    <option value="review">Review</option>
+                    <option value="done">Complété</option>
+                  </select>
                   <div class="mb-3">
                     <button
                       type="button"
@@ -138,147 +156,38 @@
           </div>
         </div>
         <div class="container my-3">
-          <div class="row">
+          <div class="row justify-content-around">
             <div
-              class="border col-sm shadow mx-1 p-3"
+              class="border col-sm-6 mb-2 shadow mx-1 p-3"
               style="min-height: 400px"
             >
               <h3>Nouveau</h3>
-              <!-- List group -->
+              <!-- List group Nouveau-->
               <ul class="list-group" id="todo-todo"></ul>
             </div>
             <div
-              class="border col-sm shadow mx-1 p-3"
+              class="border col-sm-6 mb-2 shadow mx-1 p-3"
               style="min-height: 300px"
             >
               <h3>En cours</h3>
-              <ul class="list-group">
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-start border mt-1"
-                >
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold mb-3">Apprendre Bootstrap</div>
-                    <img
-                      class="mx-1"
-                      src="assets\img\abstract-user-flat-4.svg"
-                      style="width: 25px; height: 25px"
-                    />
-                    <img
-                      class="mx-1"
-                      src="assets\img\abstract-user-flat-4.svg"
-                      style="width: 25px; height: 25px"
-                    />
-                    <img
-                      class="mx-1"
-                      src="assets\img\abstract-user-flat-4.svg"
-                      style="width: 25px; height: 25px"
-                    />
-                  </div>
-                  <div class="ms-2 d-flex flex-column justify-content-around">
-                    <span class="badge bg-warning rounded-pill mb-4"> </span>
-                    <div class="button">
-                      <button><</button><button>></button>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+              <!-- List group En cours-->
+              <ul class="list-group" id="todo-inprogress"></ul>
             </div>
             <div
-              class="border col-sm shadow mx-1 p-3"
+              class="border col-sm-6 mb-2 shadow mx-1 p-3"
               style="min-height: 300px"
             >
               <h3>Review</h3>
-              <ul class="list-group">
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-start border mt-1"
-                >
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold mb-3">Apprendre Bootstrap</div>
-                    <img
-                      class="mx-1"
-                      src="assets\img\abstract-user-flat-4.svg"
-                      style="width: 25px; height: 25px"
-                    />
-                    <img
-                      class="mx-1"
-                      src="assets\img\abstract-user-flat-4.svg"
-                      style="width: 25px; height: 25px"
-                    />
-                    <img
-                      class="mx-1"
-                      src="assets\img\abstract-user-flat-4.svg"
-                      style="width: 25px; height: 25px"
-                    />
-                  </div>
-                  <div class="ms-2 d-flex flex-column justify-content-around">
-                    <span class="badge bg-primary rounded-pill mb-4"> </span>
-                    <div class="button">
-                      <button><</button><button>></button>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+              <!-- List group Reviews-->
+              <ul class="list-group" id="todo-review"></ul>
             </div>
             <div
-              class="border col-sm shadow mx-1 p-3"
+              class="border col-sm-6 mb-2 shadow mx-1 p-3"
               style="min-height: 300px"
             >
               <h3>Complété</h3>
-              <ul class="list-group">
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-start border mt-1"
-                >
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold mb-3">Apprendre HTML</div>
-                    <img
-                      class="mx-1"
-                      src="assets\img\abstract-user-flat-4.svg"
-                      style="width: 25px; height: 25px"
-                    />
-                    <img
-                      class="mx-1"
-                      src="assets\img\abstract-user-flat-4.svg"
-                      style="width: 25px; height: 25px"
-                    />
-                    <img
-                      class="mx-1"
-                      src="assets\img\abstract-user-flat-4.svg"
-                      style="width: 25px; height: 25px"
-                    />
-                  </div>
-                  <div class="ms-2 d-flex flex-column justify-content-around">
-                    <span class="badge bg-success rounded-pill mb-4"> </span>
-                    <div class="button">
-                      <button><</button><button>x</button>
-                    </div>
-                  </div>
-                </li>
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-start border mt-1"
-                >
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold mb-3">Apprendre CSS</div>
-                    <img
-                      class="mx-1"
-                      src="assets\img\abstract-user-flat-4.svg"
-                      style="width: 25px; height: 25px"
-                    />
-                    <img
-                      class="mx-1"
-                      src="assets\img\abstract-user-flat-4.svg"
-                      style="width: 25px; height: 25px"
-                    />
-                  </div>
-                  <div>
-                    <div class="ms-2 d-flex flex-column justify-content-around">
-                      <span class="badge bg-success rounded-pill mb-4"> </span>
-                      <div class="button">
-                        <button><</button><button>x</button>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+              <!-- List group Done-->
+              <ul class="list-group" id="todo-done"></ul>
             </div>
           </div>
         </div>

@@ -1,8 +1,5 @@
 const form = document.getElementById('add-todo-form')
-
-
 const taskManager = new TaskManager()
-// taskManager.addTask('caca',"c'est la mort",'Bertrand b',"20/10/2021")
 console.log(taskManager.tasks)
 
 function check_status(obj) {
@@ -10,6 +7,9 @@ function check_status(obj) {
   const uid = obj.options[obj.selectedIndex].getAttribute('data-id');
   return uid
 }
+
+
+
 
 form.addEventListener('submit', e =>{
     e.preventDefault();
@@ -27,10 +27,12 @@ form.addEventListener('submit', e =>{
     const assignedToId = check_status(assignedToInput)
     console.log('aID : ',assignedToId)
 
-    taskManager.addTask(name,description,assignedTo,dueDate,assignedToId,taskManager.currentId)
+    taskManager.addTask(name,description,assignedTo,dueDate,assignedToId)
 
-    console.log(taskManager.tasks)
+
+    // console.log(taskManager.tasks)
     taskManager.renderTask()
+    console.timeEnd("test 1")
     nameInput.value = ''
     descriptionInput.value  = ''
     assignedToInput.value = ''
@@ -39,13 +41,9 @@ form.addEventListener('submit', e =>{
 
 
 const validateFormField = data =>{
-  const nameInput = document.getElementById('todo-name')
-  const descriptionInput = document.getElementById('description-text')
-  const assignedToInput = document.getElementById('collaborateur')
-  const dueDateInput = document.getElementById('date')
+    try{
 
-  const name = nameInput.value
-  const description = descriptionInput.value
-  const assignedTo = assignedToInput.value
-  const dueDate = dueDateInput.value
+    }catch (error){
+
+    }
 }
